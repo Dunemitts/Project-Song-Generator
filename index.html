@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery-3.6.0.js"></script>
+    <script src="song_gen.js"></script>"
+</head>
+<style>
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 500px;
+  background-color: #3C7DA6;
+}
+#Song {
+  flex: 3 1 450px;
+  min-height: 500px;
+  background-color: #96D2D9;
+  font-family: cursive;
+}
+button {
+  width: 120px;
+  height: 25px;
+  background-color: #F2E8C9;
+}
+#dashboard {
+  display: flex;
+  flex-direction: column;
+}
+.writersblock {
+  border: 3px dashed #F2E8C9;
+  margin: 13px;
+  padding: 3px;
+}
+</style>
+<body>
+    <h1>Generate your own song!</h1>
+    
+    <div id="wrapper">
+      <div id="Song"></div>
+      <div id="dashboard">
+        <div class="writersblock">
+            <button id="setTheme" onclick="themeSet()">Set Theme</button>
+            <label for="thematics">Choose Style:</label>
+            <select name="themes" id="chosen_thematics">
+              <option value="original">Original</option>
+              <option value="upbeat">Upbeat</option>
+              <option value="melancholy">Melancholy</option>
+            </select>
+        </div>
+        <div class="writersblock">
+          <button id="id_setTitle" onclick="titleSong()">Title Song</button> 
+          <label for="id_receiverName"> Song Name: </label>
+          <input type="text" id="id_receiverName" name="name_receiverName" value="" maxlength="25" size="25"/>
+        </div>
+        <div class="writersblock">
+          <button id="id_setName" onclick="artistName()">Sign Name</button>
+          <label for="id_senderName"> Artist Name: </label>
+          <input type="text" id="id_senderName" name="name_senderName" value="" maxlength="25" size="25">
+        </div>
+        
+        <div class="writersblock">
+          <button id="id_createpara1" onclick="createParagraph()">Create</button>
+          <label for="paragraphNum"> Line Number </label>
+          <input type="text" id="id_paragraphNumToCreate" name="name_paragraphNumberToCreate" value="1" maxlength="1" size="1" /><br>
+          <label for="freeform">Enter the lyrics of your song:</label><br>
+            <textarea id="id_freeform" name="name_freeform" rows="4" cols="50">Enter text here...</textarea>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
